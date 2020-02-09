@@ -6,6 +6,8 @@ import ClientHeader from './ClientHeader.js';
 import RegisterHeader from './RegisterHeader';
 import Admin from './Admin';
 import ClientDashboard from './ClientDashboard'
+import '../node_modules/font-awesome/css/font-awesome.min.css'
+
 
 
 

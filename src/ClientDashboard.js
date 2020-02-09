@@ -36,7 +36,7 @@ class ClientDashboard extends React.Component{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
+    
 <p> <h1> DASHboard view</h1></p>
   
 <p><h2>Client DASHboard</h2></p>
@@ -63,15 +63,15 @@ class ClientDashboard extends React.Component{
             <td>  
                                 
                 <a href="" >                  
-                <i className="fas fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: "1.3em" , marginRight:"10px" , color:"#5a5a5a"}}></i> 
+                <i className="fa fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: "1.3em" , marginRight:"10px" , color:"#5a5a5a"}}></i> 
                 </a>
                 
                 <a href="" >
-                <i className="fas fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: "1.3em" , marginRight:"10px" , color:"#5a5a5a"}}></i>
+                <i className="fa fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: "1.3em" , marginRight:"10px" , color:"#5a5a5a"}}></i>
                 </a>
                 
                   <a href="/orders/<%=order._id%>/cancel" >
-                  <i className="fas fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: "1.3em" , marginRight:"10px" , color:"#5a5a5a"}}></i>
+                  <i className="fa fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: "1.3em" , marginRight:"10px" , color:"#5a5a5a"}}></i>
                   </a>
                    
                   <form action="/orders/<%= order._id %>?_method=DELETE" method="POST" style={{display:"inline-block;"}}>
