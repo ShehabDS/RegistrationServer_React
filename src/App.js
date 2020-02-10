@@ -5,7 +5,9 @@ import NewPlugin from './NewPlugin.js';
 import ClientHeader from './ClientHeader.js';
 import RegisterHeader from './RegisterHeader';
 import Admin from './Admin';
-import ClientDashboard from './ClientDashboard'
+import ClientDashboard from './ClientDashboard';
+import NewOrder from './NewOrder';
+import NewProduct from './NewProduct'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 
 
@@ -19,8 +21,12 @@ class App extends React.Component {
       <ClientHeader />,
       <RegisterHeader />, 
       <Admin />
-      */}
       <ClientDashboard />
+      
+        <NewProduct />
+      */}
+      <NewOrder />
+      
       </div>
       
     );
