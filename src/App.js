@@ -56,27 +56,7 @@ class App extends React.Component {
           <EditUser />
       */}
       <NewAvidHawkOrder />
-      <NewPlugin />,
-          <ClientHeader />,
-          <RegisterHeader />, 
-          <Admin />
-          <ClientDashboard />
-          <NewOrder />
-          <NewProduct />
-          <Plugins />
-          <Orders />
-          <Products />
-          <Users />
-          <Register />
-          <ShowOrder />
-          <ShowPlugin />
-          <ShowProduct />
-          <ShowUser />
-          <OrderReview />
-          <Login />
-          <EditPlugin />
-          <EditProduct />
-          <EditUser />
+      
       </div>
       
     );
