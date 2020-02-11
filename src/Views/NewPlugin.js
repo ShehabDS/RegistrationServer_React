@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AdminHeader from "./AdminHeader.js"
+import AdminHeader from "./Partials/AdminHeader.js"
 
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import AdminHeader from "./AdminHeader";
+import AdminHeader from "./Partials/AdminHeader";
 
 
 class ClientDashboard extends React.Component{

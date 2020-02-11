@@ -1,5 +1,5 @@
 import React from "react"
-import AdminHeader from "./AdminHeader"
+import AdminHeader from "./Partials/AdminHeader"
 import Admin from "./Admin"
 
 class NewProduct extends React.Component{
