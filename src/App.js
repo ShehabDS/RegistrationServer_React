@@ -1,27 +1,27 @@
 import React from 'react';
 import './App.css';
-import NewPlugin from './NewPlugin.js';
-import NewOrder from './NewOrder';
-import NewProduct from './NewProduct';
-import NewAvidHawkOrder from './NewAvidHawkOrder';
-import Register from "./Register";
-import Admin from './Admin';
-import ClientDashboard from './ClientDashboard';
-import RegisterHeader from './RegisterHeader';
-import ClientHeader from './ClientHeader.js';
-import Plugins from "./Plugins";
-import Orders from "./Orders";
-import Products from "./Products";
-import Users from "./Users";
-import ShowOrder from "./ShowOrder";
-import ShowPlugin from "./ShowPlugin";
-import ShowProduct from "./ShowProduct";
-import ShowUser from "./ShowUser";
-import OrderReview from "./OrderReview";
-import Login from "./Login";
-import EditPlugin from "./EditPlugin";
-import EditProduct from "./EditProduct";
-import EditUser from './EditUser';
+import NewPlugin from './Views/NewPlugin.js';
+import NewOrder from './Views/NewOrder';
+import NewProduct from './Views/NewProduct';
+import NewAvidHawkOrder from './Views/NewAvidHawkOrder';
+import Register from "./Views/Register";
+import Admin from './Views/Admin';
+import ClientDashboard from './Views/ClientDashboard';
+import RegisterHeader from './Views/RegisterHeader';
+import ClientHeader from './Views/ClientHeader.js';
+import Plugins from "./Views/Plugins";
+import Orders from "./Views/Orders";
+import Products from "./Views/Products";
+import Users from "./Views/Users";
+import ShowOrder from "./Views/ShowOrder";
+import ShowPlugin from "./Views/ShowPlugin";
+import ShowProduct from "./Views/ShowProduct";
+import ShowUser from "./Views/ShowUser";
+import OrderReview from "./Views/OrderReview";
+import Login from "./Views/Login";
+import EditPlugin from "./Views/EditPlugin";
+import EditProduct from "./Views/EditProduct";
+import EditUser from './Views/EditUser';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 
@@ -56,6 +56,27 @@ class App extends React.Component {
           <EditUser />
       */}
       <NewAvidHawkOrder />
+      <NewPlugin />,
+          <ClientHeader />,
+          <RegisterHeader />, 
+          <Admin />
+          <ClientDashboard />
+          <NewOrder />
+          <NewProduct />
+          <Plugins />
+          <Orders />
+          <Products />
+          <Users />
+          <Register />
+          <ShowOrder />
+          <ShowPlugin />
+          <ShowProduct />
+          <ShowUser />
+          <OrderReview />
+          <Login />
+          <EditPlugin />
+          <EditProduct />
+          <EditUser />
       </div>
       
     );
