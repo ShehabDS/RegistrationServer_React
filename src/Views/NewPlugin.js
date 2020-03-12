@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import AdminHeader from "./Partials/AdminHeader.js"
 
 
@@ -13,7 +12,11 @@ const formValid = ({formerrors , ...rest}) =>
 	})
 }
 
+
+
 class NewPlugin extends React.Component{
+
+	componentDidUpdate(p){}
 
 
 constructor()
