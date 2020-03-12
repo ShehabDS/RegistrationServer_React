@@ -33,12 +33,14 @@ class App extends React.Component {
     return (
       <div>
       {/*
-          <NewPlugin />,
-          <ClientHeader />,
-          <RegisterHeader />, 
+          
+          <ClientHeader />
+          <RegisterHeader /> 
           <Admin />
           <ClientDashboard />
           <NewOrder />
+          <NewPlugin />
+          <NewAvidHawkOrder />
           <NewProduct />
           <Plugins />
           <Orders />
@@ -55,7 +57,7 @@ class App extends React.Component {
           <EditProduct />
           <EditUser />
       */}
-      <NewAvidHawkOrder />
+      <NewPlugin />
       
       </div>
       

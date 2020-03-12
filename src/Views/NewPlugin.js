@@ -4,180 +4,74 @@ import AdminHeader from "./Partials/AdminHeader.js"
 
 
 
+const formValid = ({formerrors , ...rest}) => 
+{
+	let Valid = true
+
+	Object.values(formerrors).forEach(val => {
+		val.length > 0 && (Valid = false)
+	})
+}
+
 class NewPlugin extends React.Component{
 
 
-// 	constructor(){
-// 		super()
-// 		this.state = {
-// 			PluginName: document.getElementById("plugin name"),
-// 			Description: document.getElementById("description"),
-// 			Version: document.getElementById("version"),
-// 			Owner: document.getElementById("plugin owner"),
-// 			OwnerMail: document.getElementById("owner e-mail"),
-// 			red: "#E50000",
-// 			blue: "#007bff",
-// 			i: 0
-// 		}
+constructor()
+{
+	super()
 
-		
-// 	}
+	this.state = {
+		pluginName: null,
+		Description: null,
+		Version: null,
+		pluginOwner: null,
+		ownerEmail: null,
+		cpuVirtualCores:null,
+		pluginMemory: null,
+		gpuUtilization: null,
+
+		formerrors:{
+			pluginName: "",
+			Description: "",
+			Version: "",
+			pluginOwner: "",
+			ownerEmail: "",
+			cpuVirtualCores:"",
+			pluginMemory: "",
+			gpuUtilization: ""
+		}
+	}
+
 	
-// 	componentDidMount(){
-// 			this.setState(
-// 				{
-// 					PluginName: document.getElementById("plugin name"),
-// 					Description: document.getElementById("description"),
-// 					Version: document.getElementById("version"),
-// 					Owner: document.getElementById("plugin owner"),
-// 					OwnerMail: document.getElementById("owner e-mail"),
-// 					red: "#E50000",
-// 					blue: "#007bff",
-// 					i: 0
-// 				}
-// 			)
-// 			console.log(this.state.PluginName)
-			
-// }
+}
 
-//  ValidateForm()
-// {
-// 	let y  = this.ValidatePluginName()
-// 		y += this.ValidateDescription()
-// 		y += this.ValidateVersion()
-// 		y += this.ValidateOwner()
-// 		y += this.ValidateOwnerEmail()
-// 		if(y == 5 && this.i == 0)
-// 		{			
-// 			return true		
-// 		}
-// 	else return false
-// }
+handleSubmit = e => {
+	e.preventDefault()
+	
+	if(formValid(this.state))
+	{
+		console.log(`
+					--Submitting--
+		Plugin name: ${this.state.pluginName}
+		Description: ${this.state.Description}
+		Version: ${this.state.Version}
+		Plugin owner: ${this.state.pluginOwner}
+		Owner email: ${this.state.ownerEmail}
+		CPU virtual cores: ${this.state.cpuVirtualCores}
+		Plugin memory: ${this.state.pluginMemory}
+		GPU utilization: ${this.state.gpuUtilization}
+		`)
+	}
 
-//  ValidatePluginName()
-// {
-// 	console.log(this.state.PluginName)
-// 	if(this.CheckEmpty(this.state.PluginName))return false
-// 	else if(this.CheckValidity(this.state.PluginName))return false
-// 	else return true	
-// }
+	else
+	{
+		console.log("Invalid Form - Display error messages")
+	}
+	
+}
 
-//  ValidateDescription()
-// {
-// 	if(this.CheckEmpty(this.Description))return false
-// 	else return true	
-// }
 
-//  ValidateVersion()
-// {
-// 	if (this.CheckEmpty(this.Version))return false
-// 	else if(this.CheckVersion(this.Version))return false
-// 	else return true	
-// }
 
-//  ValidateOwner()
-// {
-// 	if(this.CheckEmpty(this.Owner))return false
-// 	else if(this.CheckOnlyLetters(this.Owner))return false
-// 	else return true	
-// }
-
-//  ValidateOwnerEmail()
-// {
-// 	if(this.CheckEmpty(this.OwnerMail))return false
-// 	else if(this.CheckMailValidation(this.OwnerMail))return false
-// 	else return true	
-// }
-// //Validation Utilities
-//  CheckEmpty(field)
-//   {
-// 	if(field.value.trim() == "")
-// 	{
-// 		this.SetInvalid(field,`${field.id} must not be empty`)
-// 		return true
-// 	}
-
-// 	else
-// 	{
-// 		this.SetValid(field)
-// 		return false
-// 	}
-//   }
-
-//    CheckValidity(field)
-//   {
-//     if(/^[a-zA-Z-. ]+$/.test(field.value))
-//     {
-//       this.SetValid(field)
-//       return false
-//     }
-//     else
-//     {
-//       this.SetInvalid(field,`${field.id} must contain only letters, dots and dashes`)
-//       return true
-//     }
-//   }
-
-//    CheckOnlyLetters(field)
-//   {
-//     if(/^[a-zA-Z ]+$/.test(field.value))
-//     {
-//       this.SetValid(field)
-//       return false
-//     }
-//     else
-//     {
-//       this.SetInvalid(field,`${field.id} must contain only letters`)
-//       return true
-//     }
-//   }
-
-//    CheckVersion(field)
-//   {
-//     if(/^(\d+\.)?(\d+\.)?(\*|\d+)$/.test(field.value))
-//     {
-//       this.SetValid(field)
-//       return false
-//     }
-//     else
-//     {
-//       this.SetInvalid(field,`${field.id} must contain only Numbers,dots and dashes`)
-//       return true
-//     }
-//   }
-
-//    CheckMailValidation(field)
-//   {
-//     if(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(field.value))
-//     { 
-//       this.SetValid(field)
-//       return false
-//     }
-  
-//     else
-//     {
-//       this.SetInvalid(field,`Invalid ${field.id} entered!`)
-//       return true
-//     }
-//   }
-
-// //Valid or Not Cases
-//  SetInvalid(field,message)
-//   {
-//       field.nextElementSibling.textContent = message
-//       field.nextElementSibling.style.color = this.red
-//       field.style.borderColor = this.red    
-//   }
-  
-//    SetValid(field)
-//   {
-//       field.nextElementSibling.textContent = ""
-//       field.style.borderColor = this.blue 
-//   }
-
-  
-		
-		
 
 
 render(){
@@ -188,31 +82,31 @@ render(){
                 <script src="/scripts/utility.js"></script>
 <div class="container">
 		<h1><strong><p style={{paddingTop: "20px" , color: "black"}}>Create new ATUN plugin</p></strong></h1>
-    	<form action="/newPlugin" method="POST" novalidate>
+    	<form action="/newPlugin" method="POST" onSubmit={this.handleSubmit} novalidate>
         	<div className="form-group">
           		<label for="exampleFormControlInput1" style={{color: "black"}}><b>Plugin Name: </b></label>
-				  <input type="text" className="form-control" id="plugin name" name="plugin[pluginName]" placeholder="Enter The Plugin Name"  maxlength="20" />
+				  <input type="text" className="form-control" id="pluginName" name="plugin[pluginName]" placeholder="Enter The Plugin Name"  onChange={this.handleChange} maxlength="20" />
 				  <span></span>
           	</div>
 
           	<div className="form-group">
           		<label for="exampleFormControlInput2" style={{color: "black"}}><b>Brief Description: </b></label>
-				  <textarea rows="5" maxlength="100" className="form-control" id="description" name="plugin[pluginDescription]"></textarea>
+				  <textarea rows="5" maxlength="100" className="form-control" id="Description" name="plugin[pluginDescription]" />
 				  <span></span>
           	</div>
 
           	<div className="form-group">
           		<label for="exampleFormControlInput3" style={{color: "black"}}><b>Version: </b></label>
-				  <input type="text" className="form-control" id="version" name="plugin[pluginVersion]" />
+				  <input type="text" className="form-control" id="Version" name="plugin[pluginVersion]" />
 				  <span></span>
 			  </div>
 			  
 			<div className="form-group">
 				<label for="exampleFormControlInput3" style={{color: "black"}}><b>Plugin Owner: </b></label>
-				<input type="text" className="form-control" id="plugin owner" name="plugin[pluginOwner]" />
+				<input type="text" className="form-control" id="pluginOwner" name="plugin[pluginOwner]" />
 				<span></span><br /><br />
 				<label for="exampleFormControlInput3" style={{color: "black"}}><b>Plugin Owner Email: </b></label>
-				<input type="text" className="form-control" id="owner e-mail" name="plugin[pluginOwnerEmail]" required="" />
+				<input type="text" className="form-control" id="ownerEmail" name="plugin[pluginOwnerEmail]" required="" />
 				<span></span><br />
 			</div>  
 
@@ -268,13 +162,13 @@ render(){
 				
 				
 				<td>
-				<input type="text" id="CPU virtual cores" name="plugin[pluginPerformance][0][cpuVirtualCores]"  className="form-control" />
+				<input type="text" id="cpuVirtualCores" name="plugin[pluginPerformance][0][cpuVirtualCores]"  className="form-control" />
 				<span></span>
 				</td>
 
 
 				<td>
-				<input type="text" id="Plugin memory" name="plugin[pluginPerformance][0][pluginMemory]" className="form-control" />
+				<input type="text" id="pluginMemory" name="plugin[pluginPerformance][0][pluginMemory]" className="form-control" />
 				<span></span>
 				</td>
 
@@ -286,7 +180,7 @@ render(){
 					</select>				
 			    </td>
 				<td>
-				<input type="text" id="GPU utilization" name="plugin[pluginPerformance][0][gpuUtilization]" className="form-control" />
+				<input type="text" id="gpuUtilization" name="plugin[pluginPerformance][0][gpuUtilization]" className="form-control" />
 				<span></span>
 				</td>
 		</tr>
