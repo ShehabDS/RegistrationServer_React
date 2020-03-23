@@ -1,5 +1,6 @@
 import React from "react"
 import AdminHeader from "./Partials/AdminHeader"
+import {Link} from "react-router-dom";
 
 class Login extends React.Component{
     render(){
@@ -37,7 +38,7 @@ class Login extends React.Component{
                   <div className="form-group row">
                     <label htmlFor="select" className="col-sm-1 col-form-label" />
                     <div className="col-sm-4">
-                      <button type="submit" className="btn btn-primary ">Log in</button>
+                     <Link to="/NewPlugin"> <button type="submit" className="btn btn-primary ">Log in</button></Link>
                       <a className="btn btn-primary" href="/register" role="button">Register</a>
                     </div>
                   </div>

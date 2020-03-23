@@ -1,77 +1,16 @@
 import React from "react";
 import AdminHeader from "./Partials/AdminHeader.js"
+import "./Styles.css" 
+import { DatePicker } from "antd";
+import {BrowserRouter as Router, Route,Link} from "react-router-dom";
 
 
-
-const formValid = ({formerrors , ...rest}) => 
-{
-	let Valid = true
-
-	Object.values(formerrors).forEach(val => {
-		val.length > 0 && (Valid = false)
-	})
-}
 
 
 
 class NewPlugin extends React.Component{
 
-	componentDidUpdate(p){}
 
-
-constructor()
-{
-	super()
-
-	this.state = {
-		pluginName: null,
-		Description: null,
-		Version: null,
-		pluginOwner: null,
-		ownerEmail: null,
-		cpuVirtualCores:null,
-		pluginMemory: null,
-		gpuUtilization: null,
-
-		formerrors:{
-			pluginName: "",
-			Description: "",
-			Version: "",
-			pluginOwner: "",
-			ownerEmail: "",
-			cpuVirtualCores:"",
-			pluginMemory: "",
-			gpuUtilization: ""
-		}
-	}
-
-	
-}
-
-handleSubmit = e => {
-	e.preventDefault()
-	
-	if(formValid(this.state))
-	{
-		console.log(`
-					--Submitting--
-		Plugin name: ${this.state.pluginName}
-		Description: ${this.state.Description}
-		Version: ${this.state.Version}
-		Plugin owner: ${this.state.pluginOwner}
-		Owner email: ${this.state.ownerEmail}
-		CPU virtual cores: ${this.state.cpuVirtualCores}
-		Plugin memory: ${this.state.pluginMemory}
-		GPU utilization: ${this.state.gpuUtilization}
-		`)
-	}
-
-	else
-	{
-		console.log("Invalid Form - Display error messages")
-	}
-	
-}
 
 
 
@@ -85,12 +24,15 @@ render(){
                 <script src="/scripts/utility.js"></script>
 <div class="container">
 		<h1><strong><p style={{paddingTop: "20px" , color: "black"}}>Create new ATUN plugin</p></strong></h1>
-    	<form action="/newPlugin" method="POST" onSubmit={this.handleSubmit} novalidate>
+		<Router>
+    	<form  method="POST"  novalidate>
         	<div className="form-group">
           		<label for="exampleFormControlInput1" style={{color: "black"}}><b>Plugin Name: </b></label>
-				  <input type="text" className="form-control" id="pluginName" name="plugin[pluginName]" placeholder="Enter The Plugin Name"  onChange={this.handleChange} maxlength="20" />
+				  <input type="text" className="form-control" id="pluginName" name="plugin[pluginName]" placeholder="Enter The Plugin Name"   maxlength="20" />
 				  <span></span>
           	</div>
+
+			  <DatePicker />
 
           	<div className="form-group">
           		<label for="exampleFormControlInput2" style={{color: "black"}}><b>Brief Description: </b></label>
@@ -190,7 +132,8 @@ render(){
 	</tbody>
 	</table>
 	<div className="form-group" style={{display: "inline"}}>
-		<input type="submit" id="SubButton" className="btn btn-primary mb-2" value="Submit" style={{marginTop: "20px"}} />
+		<Link to="/"><input type="submit" id="SubButton" className="btn btn-primary mb-2" value="Submit" style={{marginTop: "20px"}} /></Link>
+		
 		<input className="btn btn-primary mb-2" type="reset"  value="Clear" style={{float: "right" , marginTop: "20px"}} />
 	</div>
 	
@@ -200,6 +143,7 @@ render(){
 
 
 </form>
+</Router>
 </div>
 
               </div>

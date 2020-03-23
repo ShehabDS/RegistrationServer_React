@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router , Route , Link,Switch} from "react-router-dom"
 import './App.css';
 import NewPlugin from './Views/NewPlugin.js';
 import NewOrder from './Views/NewOrder';
@@ -32,6 +33,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
+        <Router>
       {/*
           
           <ClientHeader />
@@ -57,8 +59,21 @@ class App extends React.Component {
           <EditProduct />
           <EditUser />
       */}
-      <NewPlugin />
       
+  
+<Switch>
+
+
+      
+    <Route path="/NewPlugin" component={NewPlugin}>
+		</Route>
+
+    <Route path="/" component={Login}>
+		</Route>
+
+  </Switch>    
+
+      </Router>
       </div>
       
     );
