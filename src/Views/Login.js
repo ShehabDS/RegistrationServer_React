@@ -38,20 +38,14 @@ class Login extends React.Component{
                   <div className="form-group row">
                     <label htmlFor="select" className="col-sm-1 col-form-label" />
                     <div className="col-sm-4">
-                     <Link to="/NewPlugin"> <button type="submit" className="btn btn-primary ">Log in</button></Link>
+                     <Link to="/Admin"> <button type="submit" className="btn btn-primary ">Log in</button></Link>
                       <a className="btn btn-primary" href="/register" role="button">Register</a>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
-            <ul className="slideshow">
-              <li />
-              <li />
-              <li />
-              <li />
-              <li />
-            </ul>
+           
           </div>
         )
     }

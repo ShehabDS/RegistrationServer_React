@@ -63,13 +63,18 @@ class App extends React.Component {
   
 <Switch>
 
+<Route path="/" exact component={Login} />
+<Route path="/NewPlugin" component={NewPlugin} />
+<Route path="/Admin" component={Admin} />
+<Route path="/Products" component={Products} />
+<Route path="/Plugins" component={Plugins} />
+<Route path="/Orders" component={Orders} />
+<Route path="/Users" component={Users} />
 
-      
-    <Route path="/NewPlugin" component={NewPlugin}>
-		</Route>
 
-    <Route path="/" component={Login}>
-		</Route>
+
+
+   
 
   </Switch>    
 

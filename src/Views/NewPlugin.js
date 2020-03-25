@@ -13,7 +13,9 @@ class NewPlugin extends React.Component{
 
 
 
-
+	handleChange(e){
+		e.preventDefault()
+	}
 
 
 render(){
@@ -24,8 +26,7 @@ render(){
                 <script src="/scripts/utility.js"></script>
 <div class="container">
 		<h1><strong><p style={{paddingTop: "20px" , color: "black"}}>Create new ATUN plugin</p></strong></h1>
-		<Router>
-    	<form  method="POST"  novalidate>
+    	<form  method="POST"  novalidate onSubmit={this.handleChange}>
         	<div className="form-group">
           		<label for="exampleFormControlInput1" style={{color: "black"}}><b>Plugin Name: </b></label>
 				  <input type="text" className="form-control" id="pluginName" name="plugin[pluginName]" placeholder="Enter The Plugin Name"   maxlength="20" />
@@ -143,7 +144,6 @@ render(){
 
 
 </form>
-</Router>
 </div>
 
               </div>

@@ -1,9 +1,11 @@
 import React from "react"
+import AdminHeader from "./Partials/AdminHeader"
 
 class Admin extends React.Component{
     render(){
         return(
             <div>
+                <AdminHeader />
                 <p><h1>DASHboard</h1></p>
   
 

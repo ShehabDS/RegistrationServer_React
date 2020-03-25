@@ -1,5 +1,6 @@
 import React from "react";
 import 'antd/dist/antd.css';
+import {Link} from "react-router-dom";
 
 
 class AdminHeader extends React.Component{
@@ -72,12 +73,12 @@ class AdminHeader extends React.Component{
             alt="AvidBeam"
           />
           
-          <b><a className="navbar-brand" href="/admin">Dashboard</a></b>
-          <b><a className="navbar-brand" href="/products">Products</a></b>
-          <b><a className="navbar-brand" href="/plugins">Plugins</a></b>
-          <b><a className="navbar-brand" href="/users">Users</a></b>
-          <b><a className="navbar-brand" href="/orders">Orders</a></b>
-          <b><a className="navbar-brand" href="/hardwareCalculator">Hardware</a></b>
+          <b><Link to="Admin"><a className="navbar-brand" href="/admin">Dashboard</a></Link></b>
+          <b><Link to="Products"><a className="navbar-brand" href="/products">Products</a></Link></b>
+          <b><Link to="Plugins"><a className="navbar-brand" href="/plugins">Plugins</a></Link></b>
+          <b><Link to="Users"><a className="navbar-brand" href="/users">Users</a></Link></b>
+          <b><Link to="Orders"><a className="navbar-brand" href="/orders">Orders</a></Link></b>
+          <b><Link to="Admin"><a className="navbar-brand" href="/hardwareCalculator">Hardware</a></Link></b>
           
           {/* <b><a className="navbar-brand" href="/clientDASHboard">Dashboard</a></b>
           <b><a className="navbar-brand" href="/products">Products</a></b>
@@ -91,8 +92,6 @@ class AdminHeader extends React.Component{
         <div className="navbar-collapse collapse">
           <ul className="navbar-nav ml-auto">
             
-            <li><a className="nav-link" href="/login">Login</a></li>
-            <li><a className="nav-link" href="/register">Register</a></li>
             
             <li>
               <a
@@ -108,9 +107,10 @@ class AdminHeader extends React.Component{
               </a>
             </li>
             <li>
-              <a style={{color: "aliceblue"}} className="nav-link" href="/logout"
+              <Link to="/">
+              <a style={{color: "aliceblue"}} className="nav-link" 
                 >LogOut</a
-              >
+              ></Link>
             </li>
             
           </ul>
