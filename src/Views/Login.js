@@ -12,14 +12,7 @@ class Login extends React.Component{
             <link rel="stylesheet" href="/home/avidbeam/webdevbootcamp/ProductRegisteration/fontawesome-free-5.10.2-web/css/all.css" />
             <link rel="stylesheet" href="/stylesheets/landing.css" />
             <p> </p><h1> </h1><p />
-            <div className="container">
-              <div className="alert alert-danger" role="alert">
-              </div>
-              
-              <div className="alert alert-success" role="alert">
-              </div>
-              
-            </div>
+           
             <div id="landing-header">
               <div className="container">    
                 <form action="/login" method="POST">
@@ -39,7 +32,7 @@ class Login extends React.Component{
                     <label htmlFor="select" className="col-sm-1 col-form-label" />
                     <div className="col-sm-4">
                      <Link to="/Admin"> <button type="submit" className="btn btn-primary ">Log in</button></Link>
-                      <a className="btn btn-primary" href="/register" role="button">Register</a>
+                      <Link to="/Register"><a className="btn btn-primary" href="/register" role="button">Register</a></Link>
                     </div>
                   </div>
                 </form>

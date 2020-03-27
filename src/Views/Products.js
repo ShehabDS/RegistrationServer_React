@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 import AdminHeader from "./Partials/AdminHeader"
 
 
@@ -26,20 +27,20 @@ class Products extends React.Component{
                       <td />
                       <td>
                         <div className="btn-group" role="group">                           
-                          <a href="/products/<%=product._id%>/edit">
+                         <Link to="/EditProduct" >
                             <i className="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Edit" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a'}} />
-                          </a>                             
-                          <a href="/products/<%=product._id%>/order">
+                             </Link>                          
+                          <Link to="/NewOrder" >
                             <i className="fa fa-shopping-cart" data-toggle="tooltip" data-placement="top" title="Order" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a', cursor: 'pointer'}} />                                  
-                          </a>
+                          </Link>
                           <form action="/products/<%= product._id %>?_method=DELETE" method="POST" style={{display: 'inline-block'}}>
                             <i className="fa fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Delete" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a', cursor: 'pointer'}}>
                             <button type="submit" className="btn btn-primary mb-1" style={{display: 'none', marginRight: '5px'}}>Delete</button>
                             </i>
                           </form>
-                          <a href="/products/<%=product._id%>">
+                          <Link to="/ShowProduct">
                             <i className="fa fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a'}} />                                    
-                          </a>
+                          </Link>
                           
                         </div>
                       </td>

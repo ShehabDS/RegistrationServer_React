@@ -70,6 +70,11 @@ class App extends React.Component {
 <Route path="/Plugins" component={Plugins} />
 <Route path="/Orders" component={Orders} />
 <Route path="/Users" component={Users} />
+<Route path="/Register" component={Register} />
+<Route path="/EditProduct" component={EditProduct} />
+<Route path="/NewOrder" component={NewOrder} />
+<Route path="/ShowProduct" component={ShowProduct} />
+
 
 
 
