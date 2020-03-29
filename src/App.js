@@ -1,6 +1,6 @@
 import React from 'react';
-import {BrowserRouter as Router , Route , Link,Switch} from "react-router-dom"
-import './App.css';
+import {BrowserRouter as Router , Route ,Switch} from "react-router-dom"
+import 'antd/dist/antd.css'
 import NewPlugin from './Views/NewPlugin.js';
 import NewOrder from './Views/NewOrder';
 import NewProduct from './Views/NewProduct';
@@ -23,7 +23,6 @@ import Login from "./Views/Login";
 import EditPlugin from "./Views/EditPlugin";
 import EditProduct from "./Views/EditProduct";
 import EditUser from './Views/EditUser';
-import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 
 

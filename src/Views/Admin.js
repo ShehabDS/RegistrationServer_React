@@ -6,12 +6,13 @@ class Admin extends React.Component{
         return(
             <div>
                 <AdminHeader />
-                <p><h1>DASHboard</h1></p>
   
 
  <i className="fas fa-tachometer-alt"></i> 
   
-  <div className="panel panel-primary container" id="result_panel">
+  <div className="panel panel-primary container-fluid" id="result_panel">
+  <p><h1><b>DASHboard</b></h1></p>
+
       <div className="panel-heading"><h3 className="panel-title">Highlights</h3>
       </div>
       <div className="panel-body">

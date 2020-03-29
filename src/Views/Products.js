@@ -1,6 +1,9 @@
-import React from "react"
-import {Link} from "react-router-dom"
-import AdminHeader from "./Partials/AdminHeader"
+import React from "react";
+import {Link} from "react-router-dom";
+import {ShoppingCartOutlined ,FormOutlined ,UnorderedListOutlined,DeleteOutlined} from  '@ant-design/icons';
+import 'antd/dist/antd.css';
+import {Tooltip} from "antd";
+import AdminHeader from "./Partials/AdminHeader";
 
 
 class Products extends React.Component{
@@ -26,21 +29,42 @@ class Products extends React.Component{
                       <td />
                       <td />
                       <td>
-                        <div className="btn-group" role="group">                           
-                         <Link to="/EditProduct" >
-                            <i className="fa fa-edit" data-toggle="tooltip" data-placement="top" title="Edit" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a'}} />
-                             </Link>                          
-                          <Link to="/NewOrder" >
-                            <i className="fa fa-shopping-cart" data-toggle="tooltip" data-placement="top" title="Order" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a', cursor: 'pointer'}} />                                  
-                          </Link>
-                          <form action="/products/<%= product._id %>?_method=DELETE" method="POST" style={{display: 'inline-block'}}>
-                            <i className="fa fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Delete" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a', cursor: 'pointer'}}>
-                            <button type="submit" className="btn btn-primary mb-1" style={{display: 'none', marginRight: '5px'}}>Delete</button>
-                            </i>
-                          </form>
-                          <Link to="/ShowProduct">
-                            <i className="fa fa-list-alt" data-toggle="tooltip" data-placement="top" title="Details" style={{fontSize: '1.3em', marginRight: '15px', color: '#5a5a5a'}} />                                    
-                          </Link>
+                        <div className="btn-group" role="group">      
+
+                    <div style={{marginRight:"15px"}}>
+                         <Tooltip  trigger={['hover',]} title="Edit" placement="top" >
+                           <Link to="/EditProduct" >
+                             <FormOutlined title="Edit" style={{fontSize:"1.5em",color:"#5a5a5a"}}/>                             
+                           </Link>    
+                         </Tooltip>
+                    </div>
+                       
+                        <div style={{marginRight:"15px"}}>
+                          <Tooltip  trigger={['hover',]} title="Order" placement="top" >
+                             <Link to="/NewOrder" >
+                               <ShoppingCartOutlined style={{fontSize:"1.5em",color:"#5a5a5a"}} />                            
+                             </Link>
+                           </Tooltip>
+                        </div>
+                         
+                          <div style={{marginRight:"15px"}}>
+                            <Tooltip  trigger={['hover',]} title="Details" placement="top" >
+                              <Link to="/ShowProduct">
+                                <UnorderedListOutlined title="Details" style={{fontSize:"1.5em",color:"#5a5a5a"}} />
+                              </Link>
+                            </Tooltip>
+                          </div>
+                         
+                          <div style={{marginRight:"15px"}}>
+                            <Tooltip  trigger={['hover',]} title="Delete" placement="top" >
+                              <form action="/products/<%= product._id %>?_method=DELETE" method="POST" style={{display: 'inline-block'}}>
+                                <DeleteOutlined style={{fontSize:"1.5em",color:"#5a5a5a"}} >
+                                  <button type="submit" className="btn btn-primary mb-1" style={{display: 'none', marginRight: '5px'}}>Delete</button>
+                                </DeleteOutlined>
+                              </form>
+                            </Tooltip>
+                          </div>
+                          
                           
                         </div>
                       </td>

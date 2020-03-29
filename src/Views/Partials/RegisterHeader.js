@@ -54,7 +54,8 @@ class RegisterHeader extends React.Component{
     <nav className="navbar navbar-expand-md navbar-dark bg-primary" >
       <div className="container-fluid" style={{width: "100%;"}}>
         <div className="navbar-header" style={{width: "65%;"}}>
-          <p style={{color: "aliceblue" , marginTop: "20px" , fontSize: "40px"}}><img
+          <p style={{color: "aliceblue" , marginTop: "20px" , fontSize: "40px"}}>
+            <img
             src="/icons/AvidBeam-logo-white.png"
             style={{width: "280px" , marginBottom:"20px"}}
             alt="AvidBeam"
@@ -83,12 +84,7 @@ class RegisterHeader extends React.Component{
       </div>
     </nav>
 
-    <div className="container">
-      
-      
-      
-    </div>
-
+   
     
   </body>
 
